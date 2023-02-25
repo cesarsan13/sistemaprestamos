@@ -26,11 +26,10 @@ function App() {
       <Routes>
         <Route path="/Login" element={<Login login={login} user={user}/>}> </Route>
         <Route path="*" element={<Login login={login} user={user}/>}></Route>
-        <Route path="/home" element={
-        <ProtectedRoute user={user} >
-          <Home logout={logout} />
-        </ProtectedRoute>
-        }>
+        <Route element={<ProtectedRoute user={user}/>}>
+          {/* Aqui van las rutas protegidas que se mostraran cuando el usuario este logueado  */}
+          <Route path="/home" element={<Home logout={logout} />}>
+        </Route>
 
         </Route>
       </Routes>
