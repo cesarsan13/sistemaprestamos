@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import { useState } from 'react';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import Home from './pages/Home';
+import './components/icons'
 function App() {
   const [user, setuser] = useState(null);
 

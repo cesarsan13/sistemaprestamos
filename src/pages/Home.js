@@ -1,8 +1,12 @@
+import SideBar from "../components/Sidebar";
+import MainContent from "../components/MainContent";
 function Home({logout}) {
   return (
-    <div>
-        <h1>Home Page</h1>
-        <button onClick={(evt)=>logout(evt)}></button>
+    <div className="container-fluid">
+        <div className="row flex-nowrap">
+          <SideBar/>
+          <MainContent/>
+        </div>
     </div>
   );
 }
