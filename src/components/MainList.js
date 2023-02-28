@@ -1,12 +1,11 @@
 import ItemList from "./ItemList";
-import { IHouse } from "./icons";
 
 function MainList(){
     return (
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                   <ItemList nombre={"Casa"} icono={"house"}/>
-                   <ItemList nombre={"clientes"} icono={"user"}/>
-                    <li>
+                   <ItemList nombre={"Casa"} icono={"house"} hacia={"/index"}/>
+                   <ItemList nombre={"clientes"} icono={"user"} hacia={"/clientes"}/>
+                    {/* <li>
                         <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-speedometer2"></i> <span className="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                         <ul className="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
@@ -55,7 +54,7 @@ function MainList(){
                     <li>
                         <a href="#" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
+                    </li> */}
                 </ul>
     );
 }

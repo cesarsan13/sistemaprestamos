@@ -1,12 +1,13 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Login from "./pages/Login";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import "./components/icons";
 import SideBar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
+import ErrorPage from "./pages/ErrorPage";
 function App() {
   const [user, setuser] = useState(null);
 
@@ -16,7 +17,6 @@ function App() {
       id: 1,
       name: "admin",
     });
-  
   };
   const logout = (evt) => {
     evt.preventDefault();
@@ -25,24 +25,64 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/Login" element={<Login login={login} user={user} />}></Route>
-          <Route path="*" element={<Login login={login} user={user} />}></Route>
-            <Route element={<ProtectedRoute user={user}/>}>
-                <Route path="/home" element={
-                  <Home user={user} >
-                    <h1>home</h1>
-                  </Home>} />
-                  <Route path="/clientes" element={
-                  <Home user={user} >
-                    <h1>clientes</h1>
-                  </Home>} />
-            </Route>
-        </Routes>
+      {user ? (
+        <Home>
+        <SideBar logout={logout}/>
+          <MainContent>
+          <Routes>
+          <Route element={<ProtectedRoute user={user}/>} >
+              <Route path='/' element={<h1>INDEX</h1>} />
+              <Route path='/index' element={<h1>INDEX</h1>} />
+              <Route path='/clientes' element={<ErrorPage/>} />
+          </Route>
+          </Routes>
+          </MainContent>
+        </Home>
+      
+          
+      ):(
+      <Routes>
+        <Route path='/Login' element={<Login login={login} user={user} />} />
+        <Route path='/' element={<Login login={login} user={user} />} />
+        <Route path='*'  element={<Login login={login} user={user} />} />
+      </Routes>
+      )
+
+      }
       </BrowserRouter>
     </div>
+      // <BrowserRouter>
+      //   {/* {user&&<SideBar/>} */}
+      //   <Routes>
+      //     <Route
+      //       path="/Login"
+      //       element={<Login login={login} user={user} />}
+      //     ></Route>
+      //     <Route path="*" element={<Login login={login} user={user} />}></Route>
+
+      //     <Route element={<ProtectedRoute user={user} />}>
+      //       {<h1>hola</h1>}
+      //       <Route
+      //         path="/home"
+      //         element={
+      //           <Home user={user}>
+      //             <h1>home</h1>
+      //           </Home>
+      //         }
+      //       />
+      //       <Route
+      //         path="/clientes"
+      //         element={
+      //           <Home user={user}>
+      //             <ErrorPage />
+      //           </Home>
+      //         }
+      //       />
+      //     </Route>
+      //   </Routes>
+      // </BrowserRouter>
   );
 }
 

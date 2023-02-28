@@ -4,7 +4,7 @@ function Login({login,user}) {
     return (
         <div className="container">
             
-            {user&&<Navigate to="/home"/> }
+            {user&&<Navigate to="/index" replace /> }
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto bg-gray border-5" >
                     <div className="card border-5 shadow rounded-3 my-5" >
