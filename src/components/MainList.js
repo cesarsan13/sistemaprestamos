@@ -4,7 +4,8 @@ import { IHouse } from "./icons";
 function MainList(){
     return (
         <ul className="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                   <ItemList nombre={"Casa"} icono={"house"} />
+                   <ItemList nombre={"Casa"} icono={"house"}/>
+                   <ItemList nombre={"clientes"} icono={"user"}/>
                     <li>
                         <a href="#submenu1" data-bs-toggle="collapse" className="nav-link px-0 align-middle">
                             <i className="fs-4 bi-speedometer2"></i> <span className="ms-1 d-none d-sm-inline">Dashboard</span> </a>

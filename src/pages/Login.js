@@ -4,7 +4,6 @@ function Login({login,user}) {
     return (
         <div className="container">
             
-          { console.log(user)}
             {user&&<Navigate to="/home"/> }
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto bg-gray border-5" >
