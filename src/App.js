@@ -1,16 +1,16 @@
 import "./App.css";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter} from "react-router-dom";
 import Login from "./pages/Login";
-import { Fragment, useState } from "react";
+import {  useState } from "react";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-import "./components/icons";
+import "./components/fontawesome";
 import SideBar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
 import ErrorPage from "./pages/ErrorPage";
 function App() {
   const [user, setuser] = useState(null);
-
+  
   const login = (evt) => {
     evt.preventDefault();
     setuser({
@@ -20,10 +20,9 @@ function App() {
   };
   const logout = (evt) => {
     evt.preventDefault();
-
     setuser(null);
   };
-
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -40,8 +39,6 @@ function App() {
           </Routes>
           </MainContent>
         </Home>
-      
-          
       ):(
       <Routes>
         <Route path='/Login' element={<Login login={login} user={user} />} />
@@ -49,40 +46,9 @@ function App() {
         <Route path='*'  element={<Login login={login} user={user} />} />
       </Routes>
       )
-
       }
       </BrowserRouter>
     </div>
-      // <BrowserRouter>
-      //   {/* {user&&<SideBar/>} */}
-      //   <Routes>
-      //     <Route
-      //       path="/Login"
-      //       element={<Login login={login} user={user} />}
-      //     ></Route>
-      //     <Route path="*" element={<Login login={login} user={user} />}></Route>
-
-      //     <Route element={<ProtectedRoute user={user} />}>
-      //       {<h1>hola</h1>}
-      //       <Route
-      //         path="/home"
-      //         element={
-      //           <Home user={user}>
-      //             <h1>home</h1>
-      //           </Home>
-      //         }
-      //       />
-      //       <Route
-      //         path="/clientes"
-      //         element={
-      //           <Home user={user}>
-      //             <ErrorPage />
-      //           </Home>
-      //         }
-      //       />
-      //     </Route>
-      //   </Routes>
-      // </BrowserRouter>
   );
 }
 
