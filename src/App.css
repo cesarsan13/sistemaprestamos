@@ -1,7 +1,7 @@
 
 body{
-  background: #403B4A;  /* fallback for old browsers */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background: #343434;  /* fallback for old browsers */
+  /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; */
   background-blend-mode: multiply,multiply;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -17,14 +17,29 @@ body{
     border-radius: 1.3rem!important;
   }
   .sidebar{
-    background-color: #343434;
-
+    background:#FCFAF1 ;
   } 
   .sidebar-content{
-    background-color: #CACACA;
+    background-color: #FCFAF1;
 
+  }
+  .panel{
+    /* background-color: #CACACA ; */
+    background-color: #343434;
+  }
+  .faicon{
+    color: #343434;
   }
   .faicon:hover{
     color: #E6B31E;
     transform:scale(2.25);
   }
+.titulo{
+  font-family: 'Quicksand', sans-serif;
+  color:#FCFAF1 ;
+}
+  /*  Symphony Script para bienvenida
+    Space Mono para demas
+
+  */
+
