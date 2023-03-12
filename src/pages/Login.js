@@ -31,7 +31,7 @@ function Login({ login, user }) {
                 </div>
                 <div className=" form-floating mb-3">
                   <input
-                    type="passwprd"
+                    type="password"
                     className="form-control"
                     id="floatingPassword"
                     placeholder="Password"
