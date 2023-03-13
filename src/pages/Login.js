@@ -8,13 +8,13 @@ function Login({ login, user }) {
         <div className="col-sm-9 col-md-7 col-lg-5 mx-auto bg-gray border-5 " >
           <div className="card border-5 shadow rounded-3 my-5 panel">
             <div className="card-body p-4 p-sm-5">
-              <h5 className="card-tittle text-center mb-2 fw-bold fs-1 titulo">
+              <h5 className="card-tittle text-center mb-2 fw-bold fs-2 titulo">
                 Sistema de Prestamos
               </h5>
               <div className="d-flex justify-content-center">
                 <img src={logo} alt="" className="imagen" />
               </div>
-              <h5 className="card-tittle text-center mb-2 fw-bold fs-1 titulo">
+              <h5 className="card-tittle text-center mb-2 fw-bold fs-2 titulo">
                 Bienvenido
               </h5>
               <form>
@@ -42,7 +42,7 @@ function Login({ login, user }) {
                 </div>
                 <div className="d-grid">
                   <button
-                    className="btn btn-primary btn-login text-uppercase fw-bold"
+                    className="btn boton btn-login text-uppercase fw-bold"
                     onClick={(evt) => login(evt)}
                   >
                     Iniciar Sesion

@@ -7,7 +7,9 @@ import Home from "./pages/Home";
 import "./components/fontawesome";
 import SideBar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
-import ErrorPage from "./pages/ErrorPage";
+import CCLientes from "./catalogos/CClientes";
+import "../src/main.css"
+import "../node_modules/bootstrap/dist/js/bootstrap"
 function App() {
   const [user, setuser] = useState(null);
   
@@ -31,11 +33,14 @@ function App() {
         <SideBar logout={logout}/>
           <MainContent>
           <Routes>
-          <Route element={<ProtectedRoute user={user}/>} >
-              <Route path='/' element={<h1>INDEX</h1>} />
-              <Route path='/index' element={<h1>INDEX</h1>} />
-              <Route path='/clientes' element={<ErrorPage/>} />
-          </Route>
+            <Route element={<ProtectedRoute user={user}/>} >
+                <Route path='/' element={<h1>INDEX</h1>} />
+                <Route path='/index' element={<h1>INDEX</h1>} />
+                <Route path='/Clientes' element={<CCLientes/>} />
+                <Route path='/Usuarios' element={<h1>Usuarios</h1>} />
+                <Route path='/Socios' element={<h1>Socios</h1>} />
+                <Route path='/Pagos' element={<h1>Pagos</h1>} />
+            </Route>
           </Routes>
           </MainContent>
         </Home>
