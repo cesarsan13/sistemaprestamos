@@ -9,7 +9,7 @@ function CCLientes(){
                 </h1>
                 </div>
                 <div className="col-sm-3 align-self-end" >
-                    <button type="button" className="btn btn-danger mb-2">Añadir</button>
+                    <button type="button" className="btn btn-primary mb-2">Añadir</button>
                 </div>
             </div>
             <div className="row mb-3">
@@ -26,26 +26,27 @@ function CCLientes(){
                 </div>
             </div>
             <div className="row">
-                <div className="col-sm-12 col-md-12">
-                    <table className="table table-striped table-danger">
-                        <thead>
+                <div className="col-sm-12 col-md-12 table-responsive table-wrapper" >
+                    <table className="table table-striped table-primary ">
+                        <thead style={{'background':'red'}}>
                             <tr key="">
-                                <td>Num.</td>
-                                <td>Nombre</td>
-                                <td>Apellidos</td>
+                                <th>Num.</th>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr key="">
-                                <td>1</td>
+                                <td>
+                                    <i className="material-icons">
+                                        A
+                                    </i>
+                                </td>
                                 <td>1</td>
                                 <td>1</td>
                             </tr>
-                            <tr key="">
-                                <td>1</td>
-                                <td>1</td>
-                                <td>1</td>
-                            </tr>
+                       
+                            
                         </tbody>
                     </table>
                 </div>
