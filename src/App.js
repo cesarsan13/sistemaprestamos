@@ -10,6 +10,8 @@ import MainContent from "./components/MainContent";
 import CCLientes from "./catalogos/CClientes";
 import "../src/main.css"
 import "../node_modules/bootstrap/dist/js/bootstrap"
+import CUsuarios from "./catalogos/CUsuarios";
+import CSocios from "./catalogos/CSocios";
 function App() {
   const [user, setuser] = useState(null);
   
@@ -37,8 +39,8 @@ function App() {
                 <Route path='/' element={<h1>INDEX</h1>} />
                 <Route path='/index' element={<h1>INDEX</h1>} />
                 <Route path='/Clientes' element={<CCLientes/>} />
-                <Route path='/Usuarios' element={<h1>Usuarios</h1>} />
-                <Route path='/Socios' element={<h1>Socios</h1>} />
+                <Route path='/Usuarios' element={<CUsuarios/>} />
+                <Route path='/Socios' element={<CSocios/>} />
                 <Route path='/Pagos' element={<h1>Pagos</h1>} />
             </Route>
           </Routes>

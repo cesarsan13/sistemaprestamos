@@ -1,15 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Encabezado from "../catalogos_components/Encabezado";
 import Busqueda from "../catalogos_components/Busqueda";
 import Tabla from "../catalogos_components/Tabla";
-function CCLientes(){
+function CUsuarios(){
     return(
         <div className="container">
-            <Encabezado titulo={'Clientes'} txt_boton={'Añadir'}/>
+            <Encabezado titulo={'Usuarios'} txt_boton={'Añadir'}/>
             <Busqueda/>
             <Tabla/>
         </div>
     );
 }
 
-export default CCLientes;
+export default CUsuarios;

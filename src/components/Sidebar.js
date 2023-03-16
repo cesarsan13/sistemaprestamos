@@ -74,7 +74,7 @@ function SideBar({ logout }) {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <FontAwesomeIcon icon={["fas", "chart-line"]} className={"faicon fs-4"} />{" "}
+              <FontAwesomeIcon icon={["fas", "chart-line"]} className={"faicon fs-4"} />
               <span className="fw-bold fs-6 faicon-text d-none d-sm-inline d-lg-inline d-xl-inline">
                 Estadisticas
               </span>

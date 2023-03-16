@@ -5,9 +5,6 @@ function MainContent({children}){
       <div className="col-sm p-3 min-vh-100">
             {children}
       </div>
-    // <div className="col py-3">
-    //   {children}
-    // </div>
     );
 }
 
