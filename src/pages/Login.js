@@ -1,9 +1,10 @@
 import logo from "../logo.svg";
 import { Navigate } from "react-router-dom";
-function Login({ login, user }) {
+function Login({ login, user , onTextChanged,isAuth }) {
+  const {username,password} = user;
   return (
     <div className="container">
-      {user && <Navigate to="/index" replace />}
+      {isAuth && <Navigate to="/" replace />}
       <div className="row">
         <div className="col-sm-9 col-md-7 col-lg-5 mx-auto bg-gray border-5 " >
           <div className="card border-5 shadow rounded-3 my-5 panel">
@@ -17,7 +18,8 @@ function Login({ login, user }) {
               <h5 className="card-tittle text-center mb-2 fw-bold fs-2 titulo">
                 Bienvenido
               </h5>
-              <form>
+              <form onSubmit={(event)=>login(event)
+              }>
                 <div className="form-floating mb-3">
                   <input
                     type="text"
@@ -26,6 +28,9 @@ function Login({ login, user }) {
                     placeholder="Username"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
+                    name="username"
+                    onChange={(e)=>onTextChanged(e)}
+                    value={username}
                   />
                   <label htmlFor="floatingInput">Usuario</label>
                 </div>
@@ -37,13 +42,16 @@ function Login({ login, user }) {
                     placeholder="Password"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
+                    name="password"
+                    onChange={(e)=>onTextChanged(e)}
+                    value={password}
                   />
                   <label htmlFor="floatingPassword">Contraseña</label>
                 </div>
                 <div className="d-grid">
                   <button
                     className="btn boton btn-login text-uppercase fw-bold"
-                    onClick={(evt) => login(evt)}
+                    ype="submit"
                   >
                     Iniciar Sesion
                   </button>
