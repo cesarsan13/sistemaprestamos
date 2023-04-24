@@ -13,14 +13,16 @@ import "../node_modules/bootstrap/dist/js/bootstrap";
 import CUsuarios from "./catalogos/CUsuarios";
 import CSocios from "./catalogos/CSocios";
 import axios from "axios";
-
-
+import { setCookies } from "./helpers/helpers";
+import { swal } from "./helpers/helpers";
+import { Cookies } from "react-cookie";
+const cookies = new Cookies();
 
 function App() {
   const [user, setuser] = useState({ username: "", password: "" });
   const [isAuth, setisAuth] = useState(null);
 
-  const onTextChanged = (event) => {
+  const onTextChanged = (event) => {  
     const { name, value } = event.target;
     console.log(name, value);
     setuser((prevstate) => {
@@ -30,24 +32,32 @@ function App() {
       };
     });
   };
-  const setCookies= async(data)=>{
-    //cookies.set("prueba","valor de prueba",10)
-  }
+
   const login = async (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.target);
     try {
       const res = await axios
-        .post("http://127.0.0.1:8000/api/login", formData)
+        // .post("http://127.0.0.1:8000/api/login", formData)
+        .post("http://192.168.100.64:8000/api/login", formData)
       const {data} = res;
       if(!data) return ;
-      console.log(data);
-
-      // await setCookies(data);
+      await setCookies(data)
+      setisAuth(data.token);
+      alert("hey");
+      
     } catch (error) {
-      console.log(error)      
+      alert(error);
+      swal(
+        "Error",
+        error.response.data.message,
+        0,
+        'error'
+      );
+      console.log(error.response.data)
     }
   };
+
   const logout = (evt) => {
     evt.preventDefault();
     setuser(null);
@@ -56,14 +66,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {isAuth ? (
+        {cookies.get("isAuth") ? (
           <Home>
             <SideBar logout={logout} />
             <MainContent>
               <Routes>
                 <Route element={<ProtectedRoute user={user} />}>
-                  <Route path="/" element={<h1>INDEX</h1>} />
-                  <Route path="/index" element={<h1>INDEX</h1>} />
                   <Route path="/Clientes" element={<CCLientes />} />
                   <Route path="/Usuarios" element={<CUsuarios />} />
                   <Route path="/Socios" element={<CSocios />} />
