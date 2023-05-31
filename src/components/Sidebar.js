@@ -1,7 +1,6 @@
 // import MainList from "./MainList";
 // import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import logo from "../logo.svg";
 import IconLink from "./IconLink";
 function SideBar({ logout }) {
@@ -18,14 +17,17 @@ function SideBar({ logout }) {
           <FontAwesomeIcon icon={["fas","home"]} className={'faicon fs-4'} /><span className="fw-bold fs-6 faicon-text d-none d-sm-inline d-lg-inline d-xl-inline">Prestamos Marmir</span>
           </div>
           </li> */}
+        
           <li li className="nav-item">
-            <IconLink
-            id={"aClientes"}
+
+              <IconLink
+              id={"aClientes"}
               to={"/Clientes"}
               titulo={"Clientes"}
               prefix={"bi"}
               iconName={"bi-person-circle"}
-            />
+              />
+           
           </li>
           <li className="nav-item">
             <IconLink

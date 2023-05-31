@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function Tabla(){
+function Tabla({Movimiento,changeMovimiento}){
     return (
       <div className="row ">
         <div className="col-sm-12 col-md-12 col-12 col-lg-10  table-responsive table-wrapper">
@@ -20,7 +20,8 @@ function Tabla(){
                 <td>Cesar Omar</td>
                 <td>Sanchez Tapia</td>
                 <td className="text-center">
-                  <button className="btn" onClick={() => alert("hola mundo")}>
+                  <button className="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e) =>
+                changeMovimiento("Ver")} >
                     <FontAwesomeIcon
                       icon={["fas", "eye"]}
                       className={"faicon"}
@@ -29,7 +30,7 @@ function Tabla(){
                 </td>
 
                 <td className="text-center">
-                  <button className="btn" onClick={() => alert("hola mundo")}>
+                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"onClick={()=>changeMovimiento("Cambio")}>
                     <FontAwesomeIcon
                       icon={["fas", "pen-to-square"]}
                       className={"faicon"}
@@ -37,7 +38,7 @@ function Tabla(){
                   </button>
                 </td>
                 <td className="text-center">
-                  <button className="btn" onClick={() => alert("hola mundo")}>
+                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e) => {changeMovimiento("Baja")}}>
                     <FontAwesomeIcon
                       icon={["fas", "trash"]}
                       className={"faicon"}

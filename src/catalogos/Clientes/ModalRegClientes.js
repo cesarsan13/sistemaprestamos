@@ -1,13 +1,12 @@
 import logo from "../../logo.svg";
-function ModalRegClientes() {
-    let cliente ="Prueba";
+function ModalRegClientes({inputChange,guardar,newCliente,Movimiento,changeMovimiento}) {
      
 return(
     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div className="modal-dialog modal-lg">
       <div className="modal-content">
         <div className="modal-header">
-          <h5 className="modal-title" id="exampleModalLabel">Accion Cliente {cliente}</h5>
+          <h5 className="modal-title" id="exampleModalLabel">{Movimiento} Cliente </h5>
           <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div className="modal-body">
@@ -20,35 +19,35 @@ return(
               <div className="col-lg-9 col-sm-9 col-sm-12 col-12">
                   <div className="row">
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_nombres" placeholder="Nombres" />
+                          <input type="text" className="form-control"   id="t_nombres" placeholder="Nombres" name="nombres" value={newCliente.nombres} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
                           <label for="t_nombres">Nombres</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_ap_paterno" placeholder="Apellido Paterno" />
+                          <input type="text" className="form-control"id="t_ap_paterno" placeholder="Apellido Paterno" name="ap_paterno" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
                           <label for="t_ap_paterno">Apellido Paterno</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_ap_materno" placeholder="Apellido Materno" />
+                          <input type="text" className="form-control"id="t_ap_materno" placeholder="Apellido Materno" name="ap_materno" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
                           <label for="t_ap_materno">Apellido Materno</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="date" className="form-control"id="t_fecha_nac" placeholder="Fecha Nacimiento"  />
+                          <input type="date" className="form-control"id="t_fecha_nac" placeholder="Fecha Nacimiento" name="fecha_nacimiento" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
                           <label for="t_fecha_nac">Fecha de Nacimiento</label>
                       </div>
                       <div className="col-lg-8 col-md-8"></div>
                       <div className="form-floating mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_calle" placeholder="Calle"  />
+                          <input type="text" className="form-control"id="t_calle" placeholder="Calle"  name="calle" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
                           <label for="t_calle">Calle</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_colonia" placeholder="colonia"  />
+                          <input type="text" className="form-control"id="t_colonia" placeholder="colonia" name="colonia" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_colonia">Colonia</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                          <input type="text" className="form-control"id="t_numero_exterior" placeholder="Num. Ext"  />
+                          <input type="text" className="form-control"id="t_numero_exterior" placeholder="Num. Ext" name="numero_exterior" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_numero_exterior">Núm. Ext.</label>
                       </div><div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                          <input type="text" className="form-control"id="t_cp" placeholder="Código Postal"  />
+                          <input type="text" className="form-control"id="t_cp" placeholder="Código Postal" name="cp" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_cp">Código Postal</label>
                       </div>
                   </div>
@@ -57,7 +56,7 @@ return(
           </div>
         </div>
         <div className="modal-footer">
-          <button type="button" className="btn btn-primary">Guardar</button>
+          <button type="button" className="btn btn-primary" onClick={(evt)=>guardar(evt)}>Guardar</button>
           <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
