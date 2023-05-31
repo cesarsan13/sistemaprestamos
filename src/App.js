@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import "./components/fontawesome";
 import SideBar from "./components/Sidebar";
 import MainContent from "./components/MainContent";
-import CCLientes from "./catalogos/CClientes";
+import CCLientes from "./catalogos/Clientes/CClientes";
 import "../src/main.css";
 import "../node_modules/bootstrap/dist/js/bootstrap";
 import CUsuarios from "./catalogos/CUsuarios";
@@ -38,16 +38,16 @@ function App() {
     const formData = new FormData(evt.target);
     try {
       const res = await axios
-        // .post("http://127.0.0.1:8000/api/login", formData)
-        .post("http://192.168.100.64:8000/api/login", formData)
+        .post("http://127.0.0.1:8000/api/login", formData)
+        // .post("http://192.168.100.64:8000/api/login", formData)
       const {data} = res;
       if(!data) return ;
       await setCookies(data)
       setisAuth(data.token);
-      alert("hey");
+      //alert("hey");
       
     } catch (error) {
-      alert(error);
+      //alert(error);
       swal(
         "Error",
         error.response.data.message,
