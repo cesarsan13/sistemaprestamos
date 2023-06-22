@@ -23,31 +23,31 @@ return(
                           <label for="t_nombres">Nombres</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_ap_paterno" placeholder="Apellido Paterno" name="ap_paterno" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
+                          <input type="text" className="form-control"id="t_ap_paterno" placeholder="Apellido Paterno" name="ap_paterno" value={newCliente.ap_paterno} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
                           <label for="t_ap_paterno">Apellido Paterno</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_ap_materno" placeholder="Apellido Materno" name="ap_materno" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
+                          <input type="text" className="form-control"id="t_ap_materno" placeholder="Apellido Materno" name="ap_materno" value={newCliente.ap_materno} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)} />
                           <label for="t_ap_materno">Apellido Materno</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-12 col-12">
-                          <input type="date" className="form-control"id="t_fecha_nac" placeholder="Fecha Nacimiento" name="fecha_nacimiento" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
+                          <input type="date" className="form-control"id="t_fecha_nac" placeholder="Fecha Nacimiento" name="fecha_nacimiento"value={newCliente.fecha_nacimiento} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
                           <label for="t_fecha_nac">Fecha de Nacimiento</label>
                       </div>
                       <div className="col-lg-8 col-md-8"></div>
                       <div className="form-floating mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_calle" placeholder="Calle"  name="calle" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
+                          <input type="text" className="form-control"id="t_calle" placeholder="Calle"  name="calle" value={newCliente.calle} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}  />
                           <label for="t_calle">Calle</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                          <input type="text" className="form-control"id="t_colonia" placeholder="colonia" name="colonia" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
+                          <input type="text" className="form-control"id="t_colonia" placeholder="colonia" name="colonia" value={newCliente.colonia} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_colonia">Colonia</label>
                       </div>
                       <div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                          <input type="text" className="form-control"id="t_numero_exterior" placeholder="Num. Ext" name="numero_exterior" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
+                          <input type="text" className="form-control"id="t_numero_exterior" placeholder="Num. Ext" name="numero_exterior" value={newCliente.numero_exterior} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_numero_exterior">Núm. Ext.</label>
                       </div><div className="form-floating mb-3 col-lg-4 col-md-4 col-sm-6 col-6">
-                          <input type="text" className="form-control"id="t_cp" placeholder="Código Postal" name="cp" onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
+                          <input type="text" className="form-control"id="t_cp" placeholder="Código Postal" name="cp" value={newCliente.cp} onChange={(evt)=>inputChange(evt.target.name,evt.target.value)}   />
                           <label for="t_cp">Código Postal</label>
                       </div>
                   </div>

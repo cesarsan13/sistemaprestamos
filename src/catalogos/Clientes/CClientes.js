@@ -10,8 +10,10 @@ function CCLientes(){
         ap_materno:'',
         fecha_nacimiento:'',
         calle:'',
+        colonia:'',
         numero_exterior:'',
         cp:''
+        
     }
     const [Movimiento, setMovimiento] = useState("");
     const [newCliente, setnewCLiente] = useState(datosCliente);
@@ -20,21 +22,17 @@ function CCLientes(){
        setnewCLiente(datosCliente);
     }
     const inputChange=(name,value)=>{
-        // console.log(value)
         setnewCLiente(prevsetdata=>({
             ...prevsetdata,
             [name]:value
         }));
     }
     const changeMovimiento=(val)=>{
-        console.log(val)
         setMovimiento(val)
     }
-
-
     const guardar=(evt)=>{
         evt.preventDefault();
-        console.log(newCliente)
+        console.log("guardar registro")
     }
     return (
       <div className="container-fluid ">

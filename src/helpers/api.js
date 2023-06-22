@@ -29,5 +29,4 @@ export default {
    SIGNUP,
    LOGIN,
    LOGOUT,
- 
-}
+}     
