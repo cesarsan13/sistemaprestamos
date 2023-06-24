@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 const cookies = new Cookies();
 
 export const setCookies= async (data)=>{
-    console.log(data);
     cookies.set("isAuth",data.token);
     cookies.set("ap_paterno",data.data.ap_paterno);
     cookies.set("ap_materno",data.data.ap_materno);

@@ -3,8 +3,11 @@ import Busqueda from "../../catalogos_components/Busqueda";
 import Tabla from "../../catalogos_components/Tabla";
 import ModalRegClientes from "./ModalRegClientes";
 import { useState } from "react";
+import { Cookies } from "react-cookie";
+import axios from "axios";
 function CCLientes(){
-    const datosCliente = {
+const cookies = new Cookies();
+const datosCliente = {
         nombres:'',
         ap_paterno:'',
         ap_materno:'',
@@ -12,8 +15,14 @@ function CCLientes(){
         calle:'',
         colonia:'',
         numero_exterior:'',
-        cp:''
-        
+        cp:'',
+        ciudad:'',
+        estado:'',
+        telefono:'',
+        capacidad:'',
+        credencial1:'',
+        crededncial2:'',
+        baja:''
     }
     const [Movimiento, setMovimiento] = useState("");
     const [newCliente, setnewCLiente] = useState(datosCliente);
@@ -26,13 +35,20 @@ function CCLientes(){
             ...prevsetdata,
             [name]:value
         }));
+        console.log(newCliente)
     }
     const changeMovimiento=(val)=>{
         setMovimiento(val)
     }
-    const guardar=(evt)=>{
+    const guardar= async (evt)=>{
         evt.preventDefault();
-        console.log("guardar registro")
+        console.log(newCliente);
+     let token = cookies.get("isAuth");
+        const config = {
+          headers: { Authorization: `Bearer ${token}` }
+      };
+      let res = await axios.post("http://localhost:8000/api/customer",newCliente,config);
+        console.log("guardar registro ",res  )
     }
     return (
       <div className="container-fluid ">

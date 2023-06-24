@@ -12,13 +12,9 @@ function SideBar({ logout }) {
                     <i className="bi-house fs-1"></i>
           </a>
         <ul className="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-between w-100 px-3 align-items-center">
-          {/* <li className="navbar-brand">
-          <div className="col">
-          <FontAwesomeIcon icon={["fas","home"]} className={'faicon fs-4'} /><span className="fw-bold fs-6 faicon-text d-none d-sm-inline d-lg-inline d-xl-inline">Prestamos Marmir</span>
-          </div>
-          </li> */}
+      
         
-          <li li className="nav-item">
+          <li className="nav-item">
 
               <IconLink
               id={"aClientes"}
@@ -67,13 +63,11 @@ function SideBar({ logout }) {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <li className="bi bi-book faicon fs-4"></li>
-              {/* <span className="fw-bold fs-6 faicon-text d-none d-sm-inline d-lg-inline d-xl-inline">
-                Reportes
-              </span> */}
+             <i className="bi bi-book faicon fs-4"></i>
+             
             </a>
-            <ul className="dropdown-menu d-menu"  aria-labelledby="dropdownUser3">
-              <li className="dropdown-item ddi">Hola</li>
+            <ul className="dropdown-menu" aria-labelledby="dropdownUser3">
+              <li className="dropdown-item">Hola</li>
               <li className="dropdown-item">Hola</li>
               <li className="dropdown-item">Hola</li>
             </ul>

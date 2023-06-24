@@ -24,7 +24,6 @@ function App() {
 
   const onTextChanged = (event) => {  
     const { name, value } = event.target;
-    console.log(name, value);
     setuser((prevstate) => {
       return {
         ...prevstate,
@@ -54,7 +53,6 @@ function App() {
         0,
         'error'
       );
-      console.log(error.response.data)
     }
   };
 
