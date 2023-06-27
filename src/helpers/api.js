@@ -1,4 +1,7 @@
-const 
+import { Cookies } from "react-cookie";
+
+
+export const 
 GET = "GET",
 POST = "POST",
 PUT = "PUT",
@@ -15,6 +18,8 @@ LOGIN = `${API_URL}/login`,
 LOGOUT = `${API_URL}/logout`
 
 ;
+
+export const cookies = new Cookies();
 
 export default {
    GET,
