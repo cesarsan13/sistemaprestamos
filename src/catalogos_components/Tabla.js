@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-function Tabla({Movimiento,changeMovimiento}){
+function Tabla({Movimiento,changeMovimiento,clientes,verRegistro}){
     return (
       <div className="row ">
         <div className="col-sm-12 col-md-12 col-12 col-lg-10  table-responsive table-wrapper">
@@ -15,13 +15,20 @@ function Tabla({Movimiento,changeMovimiento}){
               </tr>
             </thead>
             <tbody>
-              <tr key="">
-                <td>1</td>
-                <td>Cesar Omar</td>
-                <td>Sanchez Tapia</td>
-                <td className="text-center">
+            {clientes.map((cliente) => (
+          <tr key={cliente.id}>
+            <td>{cliente.id}</td>
+            <td>{cliente.nombres}</td>
+            <td>{cliente.ap_paterno + ' ' + cliente.ap_materno }</td>
+            <td className="text-center">
                   <button className="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e) =>
-                changeMovimiento("Ver")} >
+                  {
+                    changeMovimiento("Ver");
+                    verRegistro(cliente);
+                  } 
+                    
+                  }
+                  >
                     <FontAwesomeIcon
                       icon={["fas", "eye"]}
                       className={"faicon"}
@@ -30,7 +37,7 @@ function Tabla({Movimiento,changeMovimiento}){
                 </td>
 
                 <td className="text-center">
-                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"onClick={()=>changeMovimiento("Cambio")}>
+                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"onClick={(e) => {changeMovimiento("Cambio");verRegistro(cliente)}}>
                     <FontAwesomeIcon
                       icon={["fas", "pen-to-square"]}
                       className={"faicon"}
@@ -38,14 +45,23 @@ function Tabla({Movimiento,changeMovimiento}){
                   </button>
                 </td>
                 <td className="text-center">
-                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e) => {changeMovimiento("Baja")}}>
+                  <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={(e) => {changeMovimiento("Baja");verRegistro(cliente)}}>
                     <FontAwesomeIcon
                       icon={["fas", "trash"]}
                       className={"faicon"}
                     />
                   </button>
                 </td>
-              </tr>
+
+            {/* Agrega más celdas de datos según tus datos */}
+          </tr>
+        ))}
+              {/* <tr key="">
+                
+                <td>{{clientes}}</td>
+                <td>Cesar Omar</td>
+                <td>Sanchez Tapia</td>
+              </tr> */}
             </tbody>
           </table>
         </div>

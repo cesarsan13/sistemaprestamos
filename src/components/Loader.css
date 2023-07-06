@@ -1,0 +1,32 @@
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido oscuro */
+    z-index: 9999; /* Asegúrate de que esté por encima de otros componentes */
+  }
+  
+  .loading-content {
+    /* Estilos para el contenido de la pantalla de carga */
+    color: white;
+    font-size: 24px;
+  }
+
+  .loader {
+    border: 16px solid #343434; /* Light grey */
+    border-top: 16px solid #E6B31E; /* Orange */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

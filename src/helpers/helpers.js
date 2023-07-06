@@ -19,3 +19,18 @@ export const swal = (title,text,timer,icon)=>{
         icon:icon
     })
 }
+
+export const swalConfirm =  (title,text,icon,showCancelButton,confirmButtonText,cancelButtonText) =>{
+   return new Promise((resolve,reject)=>{
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        showCancelButton: showCancelButton,
+        confirmButtonText: confirmButtonText,
+        cancelButtonText: cancelButtonText
+      }).then((result)=>{
+        resolve(result);
+      });
+   });
+}

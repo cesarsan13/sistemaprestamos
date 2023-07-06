@@ -1,6 +1,6 @@
 import logo from "../logo.svg";
 import { Navigate } from "react-router-dom";
-function Login({ login, user , onTextChanged,isAuth }) {
+function Login({ login, user , onTextChanged,isAuth ,changeLoading}) {
   const {username,password} = user;
   return (
     <div className="container">

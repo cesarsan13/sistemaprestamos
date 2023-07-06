@@ -13,7 +13,7 @@ return (
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title" id="exampleModalLabel">
-            {Movimiento} Cliente{" "}
+            {Movimiento} {newCliente.id} {newCliente.nombres} {newCliente.ap_paterno} {newCliente.ap_materno} 
           </h5>
           <button
             type="button"
@@ -218,6 +218,7 @@ return (
             Guardar
           </button>
           <button
+          id="btn_cerrar_modal"
             type="button"
             className="btn btn-secondary"
             data-bs-dismiss="modal"

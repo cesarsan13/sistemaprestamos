@@ -16,11 +16,13 @@ import axios from "axios";
 import { setCookies } from "./helpers/helpers";
 import { swal } from "./helpers/helpers";
 import { Cookies } from "react-cookie";
+import Loader from './components/Loader';
 const cookies = new Cookies();
 
 function App() {
   const [user, setuser] = useState({ username: "", password: "" });
   const [isAuth, setisAuth] = useState(null);
+  const [loading, setloading] = useState(false);
 
   const onTextChanged = (event) => {  
     const { name, value } = event.target;
@@ -32,8 +34,13 @@ function App() {
     });
   };
 
+  const changeLoading=(val)=>{
+    setloading(val);
+  }
   const login = async (evt) => {
+
     evt.preventDefault();
+    changeLoading(true);
     const formData = new FormData(evt.target);
     try {
       const res = await axios
@@ -50,10 +57,11 @@ function App() {
       swal(
         "Error",
         error.response.data.message,
-        0,
+        2500,
         'error'
       );
-    }
+  }
+    changeLoading(false);
   };
 
   const logout = (evt) => {
@@ -62,15 +70,19 @@ function App() {
   };
 
   return (
+    
     <div className="App">
+    {loading &&    <Loader/>}
+
       <BrowserRouter>
         {cookies.get("isAuth") ? (
           <Home>
             <SideBar logout={logout} />
             <MainContent>
+
               <Routes>
                 <Route element={<ProtectedRoute user={user} />}>
-                  <Route path="/Clientes" element={<CCLientes />} />
+                  <Route path="/Clientes" element={<CCLientes changeLoading={changeLoading} />} />
                   <Route path="/Usuarios" element={<CUsuarios />} />
                   <Route path="/Socios" element={<CSocios />} />
                   <Route path="/Pagos" element={<h1>Pagos</h1>} />
@@ -89,6 +101,7 @@ function App() {
                   onTextChanged={onTextChanged}
                   setuser={setuser}
                   isAuth={isAuth}
+                  changeLoading={changeLoading}
                 />
               }
             />
